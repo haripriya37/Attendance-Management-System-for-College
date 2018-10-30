@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>student registration</title>
+<link rel="stylesheet" type="text/css" href="stf.css">
+<style type="text/css">
+	
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dddddd;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: 50px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: white;
+}
+
+li a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<header style="padding-left: 400px"><img src="header_inside.jpg"></header>
+
+<ul>
+  <li><a href="index1.html">Home</a></li>
+  <li><a href="sloginf.php">Student Login</a></li>
+  <li><a href="loginf.php">Faculty Login</a></li>
+  <li><a href="rformf.html">Faculty Registration</a></li>
+  <li><a class="active" href="sformf.html">Student Registration</a></li>
+
+</ul>
+<div id="sss" align="center">
+<form action="sin.php"method="post">
+<table border="0" align="center">
+<caption><b><font size="6" >Registration</font></b></caption>
+<tr><td>&nbsp </td> <td>&nbsp </td></tr>
+<tr><td>&nbsp </td> <td>&nbsp </td></tr>
+
+
+
+<tr>
+<td><b>Candidate's Name:</b></td>
+<td><input type="text" name="candidate_name" id="myname" onblur="validname()"></td>
+<td><p id="namef"></p></td>
+<td><p id="vname" style="font-size: 18px; display: inline; color: white;"></p></td>
+</tr>
+
+<tr>
+<td><b>Father's name</b></td><td><input type="text" name="father_name" id="myname1" onblur="validname1()"></td>
+<td><p id="namef"></p></td>
+<td><p id="vname1" style="font-size: 18px; display: inline; color: white;"></p></td>
+</tr>
+
+<tr>
+<td><b>Mother's name</b></td><td><input type="text" name="mother_name" id="myname2" onblur="validname2()"></td>
+<td><p id="namef"></p></td>
+<td><p id="vname2" style="font-size: 18px; display: inline; color: white;"></p></td>
+</tr>
+
+
+<tr>
+<td><b>Date Of Birth</b></td> <td><input type="date" name="dob"></td>
+</tr>
+
+<tr>
+<td><b>Mobile no.</b></td><td><input type="text" name="mobile_no" id="phno" onblur="validphno()"></td>
+<td><p id="namef"></p></td>
+<td><p id="vphno" style="font-size: 18px; display: inline; color: white;"></p></td>
+</tr>
+
+
+<tr>
+<td><b>Email-Address</b></td><td><input type="text" name="email" id="email" onblur="validemail()"></td>
+<td><p id="namef"></p></td>
+<td><p id="vemail" style="font-size: 18px; display: inline; color: white;"></p></td>
+</tr>
+
+<tr>
+<td align="center" colspan="3"><input type="submit" value="submit"></td>
+</tr>
+</table>
+</form>
+</div>
+
+<script>
+function validname()
+{
+	var mn=document.getElementById("myname").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn))   {  var hp=document.getElementById("vname");
+		    hp.style.color="red";  
+		    	document.getElementById("vname").innerHTML="Invalid name.";     }
+}
+function validname1()
+{
+	var mn1=document.getElementById("myname1").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn1))   {  var hp1=document.getElementById("vname1");
+		    hp1.style.color="red";  
+		    	document.getElementById("vname1").innerHTML="Invalid name.";     }
+}
+function validname2()
+{
+	var mn2=document.getElementById("myname2").value;
+		    var actualname=/^[a-zA-Z]+$/;
+		    if(!actualname.test(mn2))   {  var hp2=document.getElementById("vname2");
+		    hp2.style.color="red";  
+		    	document.getElementById("vname2").innerHTML="Invalid name.";     }
+}
+function validuname()
+{
+	var un=document.getElementById("uname").value;
+			var actualuname=/^[a-zA-Z]+[a-zA-Z0-9]/;
+			if(!actualuname.test(un)){
+			var hp1=document.getElementById("vuname");
+		    hp1.style.color="red";  
+				document.getElementById("vuname").innerHTML="Invalid username.";       }
+			else
+			{
+				document.getElementById("vuname").innerHTML="";
+			}
+
+}
+
+function validemail()
+{
+	var em=document.getElementById("email").value;
+	var actualem=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+							if(!actualem.test(em))
+							{
+								var hp1=document.getElementById("vemail");
+		    hp1.style.color="red";  
+								document.getElementById("vemail").innerHTML="Invalid email";
+							}
+							else
+							{
+								document.getElementById("vemail").innerHTML="";
+							}
+}
+function validphno()
+{
+	var pn=document.getElementById("phno").value;
+	var actualpn=/^[0-9]{10}$/;
+							if(!actualpn.test(pn))
+							{
+								var hp1=document.getElementById("vphno");
+		    hp1.style.color="red";  
+								document.getElementById("vphno").innerHTML="Invalid phone number";
+							}
+							else {document.getElementById("vphno").innerHTML="";}
+}
+</script>
+
+</body>
+</html>
